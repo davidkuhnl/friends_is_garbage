@@ -1,0 +1,67 @@
+
+/* 
+	- each style block starts with the identifier and is wrapped in {}
+	- each line ends with ;
+	- ID based styles always overwrite the class based ones; in general more specific identifier always overwrites the less specific
+	
+
+*/
+
+
+
+/*You can target the things on the webpage by their:
+	- tag names
+	- IDs
+	- class
+	- or combination of any of the above
+	
+*/
+
+
+/* You usualy define some default styles in the body tag, they will be applied to anything within the body if not specified otherwise.*/
+body {
+	font-size: 12;
+}
+
+
+
+/* I want all list item to be written in red and bold*/
+li {
+	color: red;
+	font-weight: bold;
+}
+
+/* But I can say that the list items inside my_favorite_div should actually be purple. I just have to chain the selectors. And because this one is more specific, it will apply the color from this one.*/
+#my_favorite_column li
+{
+	color: purple;
+}
+
+/* IDs are always marked with # at the begining*/
+#my_favorite_column {
+	background-color: #38de38;
+}
+
+/* Class identifiers always start with . 
+   I can say that each row should have 40px space after it
+*/
+.row {
+	margin-bottom: 40px;
+}
+
+
+/*I want some extra space above this guy*/
+#javascript_div {
+	margin-top: 50px;
+}
+
+
+
+/* You can also predefine style for things that are not in hte page yet but will appear there at some point. For example using javascript.*/
+.brand_new_row{
+	height: 3em;
+	border: 2px solid red;
+	margin-left: 30px;
+	margin-right: 30px;
+	
+}

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+  <!-- 
+  Head tag
+  ----------------------
+  - this is something like a configuration section for your page.
+  - you set your meta tags here which are used to tell search engines and browsers what your page is and such, you don't really have to worry about them too much.
+  - you point the HTML to the javascript and css files. Those can be both local or remote/online
+  --> 
+  <head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- 
+	Script and style references
+	---------------------------
+	- here you point to all the scripts and styles you want to use in the page
+	- it doesn't matter if you load first CSS or javascript but the orger within those groups matters
+		- Bootstrap for instance uses jQuery, so you have to load jQuery before Bootstrap
+		- basically you just follow the dependency chan from the most general ones to the specific ones
+		- your local scripst conatining your specific functions should be loaded the last
+	-->
+	
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+
+    <!-- jQuery first, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- 
+	Local scripts
+		- those are the ones you define yourself and that are part of your project
+		- the paths are relative to the location of the html file
+	-->
+    <script src="./js/main.js" ></script>
+
+    <!-- Local CSS - same as the scripts	-->
+    <link rel="stylesheet" href="./css/main.css" />
+
+	<!-- This is what is going to be displayed in the browser tab and such.	-->
+    <title>Hello, world!</title>
+  </head>
+
+
+  <!-- 
+  Body tag
+  ----------------------
+	- this is where the actual content of your page goes
+  -->
+  <body>
+
+  <!-- 
+	- There's tons of tags in html each with different purpose, some of the most useful ones are:
+		- <div></div> - allows you to wrap content into a block so you can style it and reference it
+		- <span></span> - similar to div but has inline properties, it's more for when you want to wrap part of text or something to be able to change it's color, size, etc.
+		- <table>
+			<tr>
+				<td>row 1; cell 1</td>
+				<td>row 1; cell 2</td>
+			</tr>
+			<tr>
+				<td>row 2; cell 1</td>
+				<td>row 2; cell 2</td>
+			</tr>
+		</table> - creates a simple table of an arbitrary amount of rows and colums. But it actually easier to use bootstrap for the same bahavior.
+		
+		<a href='some_url'>Link somewhere</a> creates link to whatever address
+		
+		<h1></h1>
+		<h2></h2>
+		<h3></h3>
+		<h4></h4> - headings, you can style them however you want
+		
+		<ul>
+			<li> List item 1 </li>
+			<li> List item 2 </li>
+		</ul> 	- for lists
+		
+	- each tag can have multiple attributes with multiple values
+		- those are used to say how the tag looks and behaves or to set its identifiers so you can refer to it in your scripts and styles
+		- the most important ones are:
+			- id - it's just unique identifier of that tag, there shouldn't be multiple tads with the same ID on one page
+			- class - also identifier but there can be multiple tags with the same class. It then allows you to refer to multiple tags at once if you for example want to change color of all of them or something.
+				- one tag can have multiple classes; they are just separated by space
+			
+		- bootstrap uses classes to style your page
+  -->
+   
+
+  <!-- The actual content  -->
+  
+  <!-- 
+  I usually use the bootstrap grid system to organize the things on the page.  
+  
+  It works like this:
+	- you start with div with class container-fluid
+	- inside the container you can define as many rows as you want by using <div class="row"> </div>
+	- inside each rows, you can have multiple columns defined using <div class="col"> </div>
+	- inside each column you could further have multiple rows and so on so on
+	
+	- you can use bootstrap predefined style to alter how big the columns should be or how should the containers be aligned, it is all documented in the bootsrap docs.
+  
+  -->
+  
+  
+  <div id="main-cont" class="container-fluid">
+
+    <!-- First row -->
+    <div class="row justify-content-md-center">
+
+	   <!-- First row: first column -->
+      <div class="col col-sm-4">
+		
+		<h2> First Row: First Column - filled with info and random text</h2>
+			<div class="whatever_class">
+				<ul>
+					<li> This page is built with <a href="https://getbootstrap.com/docs/4.0/layout/grid/" target="_blank">Bootsrap Grid</a></li>
+					<li> CSS </li>
+					<li> and a little bit of <a href="https://jquery.com/" target="_blank">jQuery</a></li>
+					<li> all the custom styles are in ./css/main.css</a></li>
+					<li> all the custom scripts are in ./js/main.js</a></li>
+					<li> graphics goes to ./img/</a></li>
+				</ul>
+			</div>
+			<div class="whatever_class">
+				Lorem ipsum dolor amet post-ironic coloring book semiotics succulents man braid banjo. Kitsch deep v master cleanse kinfolk health goth vegan marfa vexillologist gastropub keytar freegan tumeric banh mi everyday carry chicharrones. Hammock green juice taiyaki intelligentsia freegan. Vape VHS hammock master cleanse, ennui mlkshk green juice hella ethical taxidermy gastropub glossier plaid marfa. Affogato shaman church-key skateboard, lyft keffiyeh deep v small batch pork belly iceland bicycle rights.
+			</div>
+			
+      </div>
+    </div>
+
+    <!-- Second row -->
+    <div class="row justify-content-md-center">
+	<!-- Second row: first column -->
+      <div class="col col-sm-4">
+          <h2> Second Row: First Column</h2>
+		  <!-- Second row: first column: first row -->
+		  <!-- I can make it aligned to the left if I just remove the class which aligns it to the center -->
+		  <div class="row">
+			<!-- I can give this guy an ID and then use it in the CSS to make its background green or something -->
+			<div id="my_favorite_column" class="col col-sm-6">
+				<h6> Second Row: First Column: First Row: First Column</h6>
+				This guy will be green because I use the CSS and its ID to set the background color to green.
+				<ul>
+					<li> List item 1 </li>
+					<li> List item 2 </li>
+				</ul>
+			</div>
+			<div class="col col-sm-6">
+				<h6> Second Row: First Column: First Row: Second Column</h6>
+				Bootstrap has all kind of predefined page components, you can see them <a href="https://getbootstrap.com/docs/4.0/components" target="_blank">here</a>
+				<div>
+					Like buttons: <button type="button" class="btn btn-primary">Useless Button</button>
+				</div>
+				<div>
+					Form stuff 
+					<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+				</div>
+				<div>
+					Alerts
+					<div class="alert alert-danger" role="alert">
+					  This is very important! Or not. Idk.
+					</div>
+				</div>
+			</div>
+		</div>
+			<!-- Second row: first column: Second row -->
+		  <div class="row">
+			<div class="col col-sm-6">
+				<h6> Second Row: First Column: Second Row: First Column</h6>
+			</div>
+			<div class="col col-sm-6">
+				<h6> Second Row: First Column: Second Row: Second Column</h6>
+				I can have a picture here:
+				<img src="./img/cat.jpg" />
+			</div>
+		  </div>
+      </div>
+	  <!-- Second row: second column -->
+      <div class="col col-sm-4">
+		<h2> Second Row: Second Column - full of random text</h2>
+		<div>
+        Lorem ipsum dolor amet post-ironic coloring book semiotics succulents man braid banjo. Kitsch deep v master cleanse kinfolk health goth vegan marfa vexillologist gastropub keytar freegan tumeric banh mi everyday carry chicharrones. Hammock green juice taiyaki intelligentsia freegan. Vape VHS hammock master cleanse, ennui mlkshk green juice hella ethical taxidermy gastropub glossier plaid marfa. Affogato shaman church-key skateboard, lyft keffiyeh deep v small batch pork belly iceland bicycle rights.
+        Shoreditch bitters single-origin coffee, direct trade art party seitan man braid umami hoodie photo booth blue bottle polaroid hammock kinfolk squid. Affogato pinterest flexitarian narwhal polaroid 3 wolf moon kinfolk aesthetic listicle freegan man braid keytar. Helvetica migas pickled humblebrag glossier. Quinoa selvage sustainable sriracha kogi authentic. Selvage synth +1 90's asymmetrical gochujang tumeric. Migas semiotics photo booth DIY ugh tote bag brunch offal celiac shaman lyft copper mug portland.
+		</div>
+		<div id="javascript_div">
+			You can use the identifiers of the tags on the page to link them to javascript to make it responsive.
+			<button type="button" id="alert_button" class="btn btn-primary">Click This</button>
+			<button type="button" id="yellow_button" class="btn btn-warning">Or This</button>
+		</div>
+      </div>
+    </div>
+
+  </div>
+
+
+  </body>
+</html>
